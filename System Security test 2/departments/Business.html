@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Alliance Insurance</title>
+    <!-- Bootstrap CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons (you need to include this library) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Custom CSS for additional styling */
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            background-color: #000;
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .navbar .nav-item .nav-link {
+            color: #fff;
+        }
+
+        /* Dashboard styles */
+        .dashboard-container {
+            padding: 20px;
+            background-color: #4d4949;
+        }
+
+        .dashboard-sidebar {
+            /* Removed background-color property */
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            height: 100vh;
+        }
+
+        .dashboard-sidebar ul.list-group {
+            padding: 0;
+            background: #000; /* Changed background color to black */
+        }
+
+        .dashboard-sidebar ul.list-group-item {
+            border: none; /* Remove borders */
+            padding: 15px 0; /* Increase padding to make elements larger */
+            display: flex;
+            align-items: center;
+        }
+
+        .dashboard-sidebar ul.list-group-item a {
+            color: #fff;
+            text-decoration: none; /* Remove text decoration for links */
+            text-transform: uppercase;
+            font-size: 18px; /* Increase font size */
+        }
+
+        .dashboard-sidebar ul.list-group-item i {
+            margin-right: 10px; /* Add spacing between icon and text */
+            font-size: 24px; /* Increase icon size */
+        }
+
+        .dashboard-content {
+            background-color: #fff;
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .crud-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .crud-button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .create-button {
+            background-color: #28a745; /* Green color for Create button */
+            color: #fff;
+        }
+
+        .read-button {
+            background-color: #007bff; /* Blue color for Read button */
+            color: #fff;
+        }
+
+        .update-button {
+            background-color: #ffc107; /* Yellow color for Update button */
+            color: #000;
+        }
+
+        .delete-button {
+            background-color: #dc3545; /* Red color for Delete button */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Dashboard Content -->
+<div class="container-fluid dashboard-container">
+    <div class="row">
+        <!-- Dashboard Sidebar -->
+        <div class="col-md-3">
+            <div class="dashboard-sidebar bg-dark">
+                <h4 style="font-size: 40px; color: red;">ALLIANCE INS</h4>
+                <div style="margin: 15px; ">
+                    <a href="adminView.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;"><i class="fas fa-tachometer-alt"></i> Clients</a><br><br>
+                    <a href="claims.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;"><i class="fas fa-file-medical"></i> Claims</a><br><br>
+                    <a href="policy.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;" ><i class="fas fa-file-contract"></i> Policy</a><br><br>
+                    <a href="register.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;"><i class="fas fa-users"></i> Register Client</a><br><br>
+                    <a href="index.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;"><i class="fas fa-sign-out-alt"></i> Logout</a><br><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="dashboard-content" style=" background-size: cover; background-position: center; ">
+                <h1>Business Department</h1>
+
+<!-- Personal Information Table -->
+<h2>Personal Information</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>First Name</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Last Name</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Middle Name</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Email Address</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Date of Birth</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Place of Birth</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Gender</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Age</td>
+        </tr>
+        <!-- Add more rows for Personal Information -->
+    </tbody>
+</table>
+
+<!-- Financial Asset Table -->
+<h2>Financial Asset</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>9</td>
+            <td>Credit Card Number</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Debit Card Number</td>
+        </tr>
+        <!-- Add more rows for Financial Asset -->
+    </tbody>
+</table>
+
+<!-- Business Data Table -->
+<h2>Business Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>11</td>
+            <td>Contract No.</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Commodity Specialist</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Bid Opening Date</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Procurement No.</td>
+        </tr>
+        <!-- Add more rows for Business Data -->
+    </tbody>
+</table>
+
+<!-- Technical Data Table -->
+<h2>Technical Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>15</td>
+            <td>Internet Protocol Address</td>
+        </tr>
+        <!-- Add more rows for Technical Data -->
+    </tbody>
+</table>
+
+<!-- Legal Document Table -->
+<h2>Legal Document</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>16</td>
+            <td>Motor Vehicle Title</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Motor Vehicle Registration</td>
+        </tr>
+        <!-- Add more rows for Legal Document -->
+    </tbody>
+</table>
+
+<!-- Health Information Table -->
+<h2>Health Information</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>18</td>
+            <td>Medical Information</td>
+        </tr>
+        <!-- Add more rows for Health Information -->
+    </tbody>
+</table>
+
+<!-- Insurance Information Table -->
+<h2>Insurance Information</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>19</td>
+            <td>Health Insurance Policy Number</td>
+        </tr>
+        <!-- Add more rows for Insurance Information -->
+    </tbody>
+</table>
+
+<!-- Healthcare Data Table -->
+<h2>Healthcare Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>20</td>
+            <td>Medical Record Number</td>
+        </tr>
+        <!-- Add more rows for Healthcare Data -->
+    </tbody>
+</table>
+
+<!-- Contact Information Table -->
+<h2>Contact Information</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>21</td>
+            <td>Address</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Phone Number</td>
+        </tr>
+        <!-- Add more rows for Contact Information -->
+    </tbody>
+</table>
+
+<!-- Geographic Data Table -->
+<h2>Geographic Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>23</td>
+            <td>ZIP Code</td>
+        </tr>
+        <!-- Add more rows for Geographic Data -->
+    </tbody>
+</table>
+
+<!-- Financial Data Table -->
+<h2>Financial Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>24</td>
+            <td>PIN - Personal Identification Number</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>PAN - Primary Account Number / Account Number</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>Income</td>
+        </tr>
+        <!-- Add more rows for Financial Data -->
+    </tbody>
+</table>
+
+<!-- Application Data Table -->
+<h2>Application Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>27</td>
+            <td>Application Number/e-form number</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>Application Registration Number</td>
+        </tr>
+        <!-- Add more rows for Application Data -->
+    </tbody>
+</table>
+
+<!-- Legal Case Data Table -->
+<h2>Legal Case Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>29</td>
+            <td>Case Number</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>Case Record Number</td>
+        </tr>
+        <!-- Add more rows for Legal Case Data -->
+    </tbody>
+</table>
+
+<!-- Immigration Data Table -->
+<h2>Immigration Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>31</td>
+            <td>I551 Card Number</td>
+        </tr>
+        <!-- Add more rows for Immigration Data -->
+    </tbody>
+</table>
+
+<!-- Travel and Immigration Data Table -->
+<h2>Travel and Immigration Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>32</td>
+            <td>I94 Document Number</td>
+        </tr>
+        <!-- Add more rows for Travel and Immigration Data -->
+    </tbody>
+</table>
+
+<!-- Health Insurance Data Table -->
+<h2>Health Insurance Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>33</td>
+            <td>Medicare Claim Number</td>
+        </tr>
+        <!-- Add more rows for Health Insurance Data -->
+    </tbody>
+</table>
+
+<!-- Veteran Affairs Data Table -->
+<h2>Veteran Affairs Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>34</td>
+            <td>Veteran Claim Number</td>
+        </tr>
+        <!-- Add more rows for Veteran Affairs Data -->
+    </tbody>
+</table>
+
+<!-- More Tables for Additional Categories... -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

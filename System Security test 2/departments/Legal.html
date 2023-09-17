@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Alliance Insurance</title>
+    <!-- Bootstrap CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons (you need to include this library) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Custom CSS for additional styling */
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            background-color: #000;
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .navbar .nav-item .nav-link {
+            color: #fff;
+        }
+
+        /* Dashboard styles */
+        .dashboard-container {
+            padding: 20px;
+            background-color: #4d4949;
+        }
+
+        .dashboard-sidebar {
+            /* Removed background-color property */
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            height: 100vh;
+        }
+
+        .dashboard-sidebar ul.list-group {
+            padding: 0;
+            background: #000; /* Changed background color to black */
+        }
+
+        .dashboard-sidebar ul.list-group-item {
+            border: none; /* Remove borders */
+            padding: 15px 0; /* Increase padding to make elements larger */
+            display: flex;
+            align-items: center;
+        }
+
+        .dashboard-sidebar ul.list-group-item a {
+            color: #fff;
+            text-decoration: none; /* Remove text decoration for links */
+            text-transform: uppercase;
+            font-size: 18px; /* Increase font size */
+        }
+
+        .dashboard-sidebar ul.list-group-item i {
+            margin-right: 10px; /* Add spacing between icon and text */
+            font-size: 24px; /* Increase icon size */
+        }
+
+        .dashboard-content {
+            background-color: #fff;
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .crud-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .crud-button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .create-button {
+            background-color: #28a745; /* Green color for Create button */
+            color: #fff;
+        }
+
+        .read-button {
+            background-color: #007bff; /* Blue color for Read button */
+            color: #fff;
+        }
+
+        .update-button {
+            background-color: #ffc107; /* Yellow color for Update button */
+            color: #000;
+        }
+
+        .delete-button {
+            background-color: #dc3545; /* Red color for Delete button */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Dashboard Content -->
+<div class="container-fluid dashboard-container">
+    <div class="row">
+        <!-- Dashboard Sidebar -->
+        <div class="col-md-3">
+            <div class="dashboard-sidebar bg-dark">
+                <h4 style="font-size: 40px; color: red;">ALLIANCE INS</h4>
+                <div style="margin: 15px; ">
+                    <a href="adminView.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;"><i class="fas fa-tachometer-alt"></i> Clients</a><br><br>
+                    <a href="claims.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;"><i class="fas fa-file-medical"></i> Claims</a><br><br>
+                    <a href="policy.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;" ><i class="fas fa-file-contract"></i> Policy</a><br><br>
+                    <a href="register.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;"><i class="fas fa-users"></i> Register Client</a><br><br>
+                    <a href="index.html" style="text-decoration: none; color: #fff; font-size: 25px; text-transform: uppercase;"><i class="fas fa-sign-out-alt"></i> Logout</a><br><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="dashboard-content" style=" background-size: cover; background-position: center; ">
+                <!-- Legal Data Table -->
+<h2>Legal Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Data Element</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Criminal History</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Motor Vehicle Title</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Motor Vehicle Registration</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Legal Document</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Immigration Data</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Legal Case Data</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Offenses</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Party Affiliation</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Racial/Ethnic Origin</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Religious/Philosophical Beliefs</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Trade-Union Membership</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Tribe Name</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Voter ID Number</td>
+        </tr>
+        <!-- Add more rows for Legal Data as needed -->
+    </tbody>
+</table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
